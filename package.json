@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --mode development",
+    "build": "vue-cli-service build --mode production",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -33,6 +33,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
     "node-sass": "^4.14.1",
+    "prettier": "^2.2.1",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"
   },
@@ -40,6 +41,10 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
+    "**/*.js": [
+      "prettier",
+      "git add"
+    ],
     "*.{js,jsx,vue}": [
       "vue-cli-service lint",
       "git add"
