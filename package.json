@@ -48,11 +48,8 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.js": [
-      "prettier",
-      "git add"
-    ],
     "*.{js,jsx,vue}": [
+      "prettier",
       "vue-cli-service lint",
       "git add"
     ]
