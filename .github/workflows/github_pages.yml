@@ -2,10 +2,10 @@ name: GitHub Pages Deploy
 on:
   push:
     branches:
-      - deploy
+      - master
   pull_request:
     branches:
-      - deploy
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -26,5 +26,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@releases/v3
       env:
         ACCESS_TOKEN: ${{ secrets.DEPLOY_GITHUB_PAGES }}
-        BRANCH: gh-pages
+        BRANCH: deploy
         FOLDER: docs
