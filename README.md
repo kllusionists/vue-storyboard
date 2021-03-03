@@ -1,5 +1,17 @@
 # vue-storyboard
 
+## Env
+```
+vue -V
+@vue/cli 4.5.11
+
+node -v
+v14.15.0
+
+npm -v
+6.14.8
+```
+
 ## Project setup
 ```
 npm install
