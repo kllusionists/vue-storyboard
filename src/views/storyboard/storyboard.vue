@@ -1,6 +1,6 @@
 <template>
   <div class="storyboard">
-    <h1 class="text-red-300 dark:text-black">This is a storyboard page</h1>
+    <h1 class="text-red-300 dark:text-black">This is a storyboard page1</h1>
   </div>
 </template>
 

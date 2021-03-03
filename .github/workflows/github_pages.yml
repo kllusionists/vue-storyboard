@@ -1,0 +1,22 @@
+name: GitHub Pages Deploy
+on:
+  push:
+    branches:
+      - deploy
+  pull_request:
+    branches: 
+      - deploy
+jobs:
+  build-and-deploy:
+    runs-on: macOS-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@deploy
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@deploy
+      env:
+        ACCESS_TOKEN: ${{ secrets.DEPLOY_GITHUB_PAGES }}
+        BRANCH: deploy
+        FOLDER: docs
+        BUILD_SCRIPT: npm install && npm run build
