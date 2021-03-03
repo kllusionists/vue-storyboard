@@ -3,6 +3,7 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   publicPath: process.env.NODE_ENV !== 'production' ? '/' : '/vue-storyboard/',
+  outputDir: 'docs',
 
   productionSourceMap: process.env.NODE_ENV !== 'production',
 
