@@ -12,8 +12,9 @@ const routes = [
   },
   {
     path: '/',
-    name: 'Redirect',
-    redirect: '/storyboard'
+    name: 'Default-Path-Storyboard',
+    meta: { title: 'Creating' },
+    component: () => import(/* webpackChunkName: "storyboard" */ '../views/storyboard/storyboard.vue')
   },
   {
     path: '/storyboard',
