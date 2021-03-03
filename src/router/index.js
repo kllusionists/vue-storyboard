@@ -12,9 +12,8 @@ const routes = [
   },
   {
     path: '/',
-    name: 'Default-Path-Storyboard',
-    meta: { title: 'Creating' },
-    component: () => import(/* webpackChunkName: "storyboard" */ '../views/storyboard/storyboard.vue')
+    name: 'Redirect',
+    redirect: '/storyboard'
   },
   {
     path: '/storyboard',
@@ -33,8 +32,7 @@ const routes = [
     name: 'NotFund',
     meta: { title: '404' },
     component: () => import(/* webpackChunkName: "404" */ '../views/40x/404.vue')
-  },
-  { path: '*', redirect: '/', hidden: true }
+  }
 ]
 
 const router = new VueRouter({
