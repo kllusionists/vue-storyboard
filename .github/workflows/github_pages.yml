@@ -27,4 +27,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_GITHUB_PAGES }}
         BRANCH: deploy
-        FOLDER: docs
+        FOLDER: dist

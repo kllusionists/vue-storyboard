@@ -2,8 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
-  publicPath: process.env.NODE_ENV !== 'production' ? '/' : '/vue-storyboard/',
-  outputDir: 'docs',
+  // publicPath: process.env.NODE_ENV !== 'production' ? '/' : '/vue-storyboard/',
 
   productionSourceMap: process.env.NODE_ENV !== 'production',
 
