@@ -25,6 +25,6 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       env:
-        ACCESS_TOKEN: ${{ secrets.DEPLOY_GITHUB_PAGES }}
-        BRANCH: deploy
-        FOLDER: docs
+        token: ${{ secrets.DEPLOY_GITHUB_PAGES }}
+        branch: deploy
+        folder: docs
