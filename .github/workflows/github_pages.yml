@@ -16,8 +16,6 @@ jobs:
         persist-credentials: false
     - name: Setup env 
       run: |
-        npm -g install vue
-        vue -V
         npm -g i n
         n 14.15.0
     - name: Install and Build 
