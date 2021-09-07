@@ -5,21 +5,30 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/home',
-    name: 'Home',
-    meta: { title: 'Home' },
-    component: () => import(/* webpackChunkName: "home" */ '../views/home.vue')
-  },
-  {
     path: '/',
     name: 'Redirect',
-    redirect: '/storyboard'
-  },
-  {
-    path: '/storyboard',
-    name: 'Storyboard',
-    meta: { title: 'Creating' },
-    component: () => import(/* webpackChunkName: "storyboard" */ '../views/storyboard/storyboard.vue')
+    component: () => import(/* webpackChunkName: "layout" */ '../views/layout/layout.vue'),
+    redirect: '/storyboard/dashboard',
+    children: [
+      {
+        path: 'storyboard/dashboard',
+        name: 'Dashboard',
+        meta: { title: 'Dashboard' },
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/storyboard/dashboard.vue')
+      },
+      {
+        path: 'storyboard/creating',
+        name: 'Storyboard',
+        meta: { title: 'Creating' },
+        component: () => import(/* webpackChunkName: "storyboard" */ '../views/storyboard/storyboard.vue')
+      },
+      {
+        path: 'home',
+        name: 'Home',
+        meta: { title: 'Home' },
+        component: () => import(/* webpackChunkName: "home" */ '../views/home.vue')
+      }
+    ]
   },
   {
     path: '/login',
@@ -36,6 +45,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // mode: 'hash',
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   base: process.env.BASE_URL,
